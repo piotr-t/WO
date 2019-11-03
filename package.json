@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
      "deploy": "git push -f heroku master",
     "heroku-postbuild": "npm run build",
-    "start": "http-server dist/ -d false -g"
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
