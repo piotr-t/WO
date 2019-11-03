@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id ='h1'></h1>
+    <button id='b' type="button" onclick="alert('Hello world!')">Click Me!</button> 
+    <script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io(); 
+  const button = document.getElementById('b');
+  const h1 = document.getElementById('h1');
+  socket.on('news', function (data) {
+    console.log(data);
+    h1.innerHTML =data;
+    socket.emit('my other event', { my: button });
+  });
+</script>
+</body>
+</html> 
