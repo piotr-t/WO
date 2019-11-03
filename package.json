@@ -6,12 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "npm run build",
-    "node": "11.14.0",
-    "npm": "6.7.0"
+     "deploy": "git push -f heroku master",
+    "heroku-postbuild": "npm run build",
+    "start": "http-server dist/ -d false -g"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "serve": "^11.2.0",
     "socket.io": "^2.3.0",
     "socket.io-client": "^2.3.0"
   },
